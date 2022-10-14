@@ -7,19 +7,10 @@ import { DisplayRecipe } from "./DisplayRecipe";
 export class RecipeList extends React.Component {
   constructor(props) {
     super(props);
-    this.displayRecipe = this.displayRecipe.bind(this);
-    this.deleteRecipe = this.deleteRecipe.bind(this);
-  }
-
-  displayRecipe() {
-    this.props.displayRecipe();
-  }
-  deleteRecipe(index) {
-    this.props.deleteRecipe(index);
   }
 
   render() {
-    let recipeList = this.props.recipeList;
+    const { recipeList, deleteRecipe } = this.props;
     let recipeCards = recipeList.map((singleRecipe, index) => (
       <Col>
         <Card
@@ -41,7 +32,7 @@ export class RecipeList extends React.Component {
             <DisplayRecipe
               recipe={recipeList[index]}
               index={index}
-              deleteRecipe={this.deleteRecipe}
+              deleteRecipe={deleteRecipe}
             />
           </Card.Body>
         </Card>

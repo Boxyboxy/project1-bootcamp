@@ -4,47 +4,8 @@ import { Button, Modal, Row, Container, Image } from "react-bootstrap";
 export class DisplayRecipe extends React.Component {
   constructor(props) {
     super(props);
-
     console.log(this.props.recipe.name);
     this.state = {
-      recipe: {
-        name: "Puttanesca",
-        description:
-          "Spaghetti alla puttanesca is an Italian pasta dish invented in Naples in the mid-20th century and made typically with tomatoes, olive oil, olives, anchovies, chili peppers, capers, and garlic—with vermicelli or spaghetti pasta.",
-        image:
-          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/puttanesca-cfb4e42.jpg",
-
-        ingredientList: [
-          { ingredient: "Salt to taste" },
-          { ingredient: "Freshly ground black pepper to taste" },
-
-          { ingredient: "Crushed red pepper flakes to taste" },
-
-          { ingredient: "3 tablespoons of olive oil" },
-
-          { ingredient: "3 or more anchovy fillets" },
-          { ingredient: "1 28-ounce can whole plum tomatoes" },
-          { ingredient: "½ cup pitted black olives, preferably oil-cured" },
-          { ingredient: "3 or more anchovy fillets" },
-          { ingredient: "2 tablespoons capers" },
-          { ingredient: "1 pound spaghetti or other long pasta" },
-        ],
-        instructionsList: [
-          {
-            instruction:
-              "Bring pot of water to boil and salt it. Warm 2 tablespoons oil with garlic and anchovies in skillet over medium-low heat. Cook, stirring occasionally, until garlic is lightly golden.",
-          },
-          {
-            instruction:
-              "Drain tomatoes and crush with fork or hands. Add to skillet, with some salt and pepper. Raise heat to medium-high and cook, stirring occsaionally until tomatoes break down and mixture becomnes saucy, about 10 minutes. Stir in olives, capers and red pepper flakes and continue to simmer.",
-          },
-          {
-            instruction:
-              "Cook pasta, stirring occasionally, until it is tender but not mushy. Drain quickly and toss with sauce and remaining tablespoon of oil. Taste and adjust seasonings as necessary, garnish with herbs if you like, and serve.",
-          },
-        ],
-        source: "https://cooking.nytimes.com/recipes/11583-pasta-puttanesca",
-      },
       show: false,
     };
     this.handleClose = this.handleClose.bind(this);
