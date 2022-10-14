@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Rocket Academy Coding Bootcamp: Project 1: Frontend App
+
+https://bc.rocketacademy.co/1-frontend/1.p-frontend-app
+
+User Stories:
+
+- This app is meant for anybody looking to manage their repertoire of recipes.
+- Users can add, modify and delete recipes.
+- Recipe details include:
+  Name
+  Image
+  Description
+  Ingredients
+  Instructions
+  Source
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
