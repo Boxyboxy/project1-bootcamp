@@ -119,7 +119,6 @@ export class RecipeForm extends React.Component {
                   <Form.Control
                     name="ingredient"
                     type="text"
-                    id="ingredient"
                     value={singleIngredient.ingredient}
                     onChange={(e) => this.handleIngredientChange(e, index)}
                     placeholder="Enter ingredient"
@@ -164,7 +163,6 @@ export class RecipeForm extends React.Component {
                   as="textarea"
                   name="instruction"
                   type="text"
-                  id="instruction"
                   value={singleInstruction.instruction}
                   onChange={(e) => this.handleInstructionChange(e, index)}
                   placeholder="Enter instruction"

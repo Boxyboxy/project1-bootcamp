@@ -16,7 +16,7 @@ export class HeaderHeader extends React.Component {
     return (
       <header className="page_header">
         <div className="container flex-container">
-          <h1>Flava Borough</h1>
+          <h1>😛 Flava Borough</h1>
           <AddButton
             displayForm={displayForm}
             handleDisplayForm={this.handleDisplayForm}

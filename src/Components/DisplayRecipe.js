@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Modal, Row, Container, Image } from "react-bootstrap";
+import { EditRecipe } from "./EditRecipe";
 
 export class DisplayRecipe extends React.Component {
   constructor(props) {
@@ -35,14 +36,18 @@ export class DisplayRecipe extends React.Component {
   }
   render() {
     let ingredientList = this.props.recipe.ingredientList;
-    let ingredientListDisplay = ingredientList.map((singleIngredient) => (
-      <li>{singleIngredient.ingredient}</li>
-    ));
+    let ingredientListDisplay = ingredientList.map(
+      (singleIngredient, index) => (
+        <li key={index}>{singleIngredient.ingredient}</li>
+      )
+    );
 
     let instructionsList = this.props.recipe.instructionsList;
-    let instructionsListDisplay = instructionsList.map((singleInstruction) => (
-      <li>{singleInstruction.instruction}</li>
-    ));
+    let instructionsListDisplay = instructionsList.map(
+      (singleInstruction, index) => (
+        <li key={index}>{singleInstruction.instruction}</li>
+      )
+    );
     return (
       <Container>
         <Button variant="primary" onClick={this.handleShow}>
@@ -69,12 +74,12 @@ export class DisplayRecipe extends React.Component {
                   src={this.props.recipe["image"]}
                   style={{
                     border: "1px solid #ddd",
-                    "border-radius": "4px",
+                    borderRadius: "4px",
                     padding: "5px",
                     width: "400px",
                     display: "block",
-                    "margin-left": "auto",
-                    "margin-right": "auto",
+                    marginLeft: "auto",
+                    marginRight: "auto",
                   }}
                 ></Image>
               </Row>
@@ -86,13 +91,11 @@ export class DisplayRecipe extends React.Component {
               </Row>
               <Row>
                 <h5>Ingredients</h5>
-                <ul style={{ "margin-left": "5px" }}>
-                  {ingredientListDisplay}
-                </ul>
+                <ul style={{ marginLeft: "7px" }}>{ingredientListDisplay}</ul>
               </Row>
               <Row>
                 <h5>Instructions</h5>
-                <ol style={{ "margin-left": "10px" }}>
+                <ol style={{ marginLeft: "11px" }}>
                   {instructionsListDisplay}
                 </ol>
               </Row>
@@ -114,7 +117,11 @@ export class DisplayRecipe extends React.Component {
             <Button variant="secondary" onClick={this.handleClose}>
               Close
             </Button>
-            <Button variant="primary">Edit Recipe</Button>
+            <EditRecipe
+              recipe={this.props.recipe}
+              updateRecipe={this.props.updateRecipe}
+              index={this.props.index}
+            />
             <Button variant="danger" onClick={this.deleteRecipe}>
               Delete Recipe
             </Button>

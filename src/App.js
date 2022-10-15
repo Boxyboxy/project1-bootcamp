@@ -6,7 +6,6 @@ import { Container } from "react-bootstrap";
 import { RecipeList } from "./Components/RecipeList";
 import { HeaderHeader } from "./Components/HeaderHeader";
 import { RecipeForm } from "./Components/RecipeForm";
-import { DisplayRecipe } from "./Components/DisplayRecipe";
 
 export class App extends React.Component {
   constructor(props) {
@@ -129,6 +128,7 @@ export class App extends React.Component {
     this.handleDisplayForm = this.handleDisplayForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.deleteRecipe = this.deleteRecipe.bind(this);
+    this.updateRecipe = this.updateRecipe.bind(this);
   }
 
   handleDisplayForm() {
@@ -158,6 +158,12 @@ export class App extends React.Component {
     this.setState({ recipeList: recipes });
   }
 
+  updateRecipe(index, recipe) {
+    let recipes = this.state.recipeList.slice();
+    recipes[index] = recipe;
+    this.setState({ recipeList: recipes });
+  }
+
   render() {
     return (
       <div>
@@ -172,6 +178,7 @@ export class App extends React.Component {
             <RecipeList
               recipeList={this.state.recipeList}
               deleteRecipe={this.deleteRecipe}
+              updateRecipe={this.updateRecipe}
             />
           )}
         </Container>
@@ -183,12 +190,17 @@ export class App extends React.Component {
 // Questions to MinShan:
 /* 
 1. Not using the handleSubmit properly, but instead passing the state as an object and pushing it into ingredientList, is this best practice?
-2. Blocker: prop is undefined, therefore, I am unable to load the recipe into the DisplayRecipe component.  
+
 
 Check list
 TODO: Edit Recipe
 Ideas: Make the form a component in recipe display
 If I save it, how will the form be gone, use the display form state?
 
-TODO: Delete Recipe
+TODO: Finish edit feature
+TODO: Minor CSS tweaks
+TODO: Input validation
+TODO: Streamlining Edit recipe and Create recipe
+TODO: Cleaning up change handlers, refactor them (DRY)
+TODO: More css polish
 */
