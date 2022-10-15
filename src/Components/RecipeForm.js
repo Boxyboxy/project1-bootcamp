@@ -115,7 +115,7 @@ export class RecipeForm extends React.Component {
 
             {ingredientList.map((singleIngredient, index) => (
               <Row key={index} className="ingredients">
-                <Col sm={10} className="first-division">
+                <Col sm={11} className="first-division">
                   <Form.Control
                     name="ingredient"
                     type="text"
@@ -157,8 +157,8 @@ export class RecipeForm extends React.Component {
           <Form.Label>Instructions</Form.Label>
 
           {instructionsList.map((singleInstruction, index) => (
-            <div key={index} className="instruction">
-              <div className="first-division">
+            <Row key={index} className="ingredients">
+              <Col sm={11} className="first-division">
                 <Form.Control
                   as="textarea"
                   name="instruction"
@@ -179,8 +179,8 @@ export class RecipeForm extends React.Component {
                       <span>Add an Instruction</span>
                     </Button>
                   )}
-              </div>
-              <div className="second-division">
+              </Col>
+              <Col className="second-division justify-content-around">
                 {instructionsList.length !== 1 && (
                   <Button
                     variant="danger"
@@ -191,8 +191,8 @@ export class RecipeForm extends React.Component {
                     <span>Remove</span>
                   </Button>
                 )}
-              </div>
-            </div>
+              </Col>
+            </Row>
           ))}
         </Form.Group>
         <Row>
