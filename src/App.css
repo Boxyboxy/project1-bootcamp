@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  height: 100vh;
 }
 
 button {
@@ -28,7 +29,7 @@ button:hover {
 }
 
 .page_header {
-  background: #009688;
+  background: #0d6efd;
   color: #fff;
   padding: 1em;
   margin-bottom: 1em;
@@ -41,6 +42,10 @@ button:hover {
   box-sizing: border-box;
   overflow: hidden;
 }
+.react-container {
+  background-color: #282c34;
+  min-height: 100vh;
+}
 
 .flex-container {
   display: flex;
@@ -51,4 +56,8 @@ button:hover {
 
 .pull-right {
   float: right;
+}
+
+.modal-backdrop {
+  background-color: #0d6efd;
 }

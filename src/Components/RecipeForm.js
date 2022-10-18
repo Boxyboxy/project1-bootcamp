@@ -74,7 +74,16 @@ export class RecipeForm extends React.Component {
     let ingredientList = this.state.ingredientList;
     let instructionsList = this.state.instructionsList;
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form
+        onSubmit={this.handleSubmit}
+        className="p-3"
+        style={{
+          color: "whitesmoke",
+          textTransform: "uppercase",
+          fontWeight: "bold",
+          textStroke: "2px #0d6efd ",
+        }}
+      >
         <Row>
           <Form.Group controlId="formBasicName">
             <Form.Label>Recipe Name</Form.Label>
@@ -123,6 +132,7 @@ export class RecipeForm extends React.Component {
                     onChange={(e) => this.handleIngredientChange(e, index)}
                     placeholder="Enter ingredient"
                     required
+                    className="mb-3"
                   />
                   {ingredientList.length - 1 === index &&
                     ingredientList.length < 15 && (
@@ -130,7 +140,7 @@ export class RecipeForm extends React.Component {
                         type="button"
                         variant="primary"
                         onClick={this.handleIngredientAdd}
-                        className="add-btn"
+                        className="add-btn "
                       >
                         <span>Add an Ingredient</span>
                       </Button>
@@ -167,6 +177,7 @@ export class RecipeForm extends React.Component {
                   onChange={(e) => this.handleInstructionChange(e, index)}
                   placeholder="Enter instruction"
                   required
+                  className="mb-3"
                 />
                 {instructionsList.length - 1 === index &&
                   instructionsList.length < 15 && (
@@ -203,6 +214,7 @@ export class RecipeForm extends React.Component {
               placeholder="Enter the source URL"
               name="source"
               onChange={this.handleChange}
+              className="mb-3"
             />
           </Form.Group>
         </Row>

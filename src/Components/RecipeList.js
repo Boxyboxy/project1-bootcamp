@@ -10,8 +10,10 @@ export class RecipeList extends React.Component {
     let recipeCards = recipeList.map((singleRecipe, index) => (
       <Col key={index}>
         <Card
+          bg="primary"
           style={{ width: "20rem", height: "35rem" }}
           key={index}
+          text="white"
           className="recipeCards"
         >
           <Card.Img
@@ -38,9 +40,7 @@ export class RecipeList extends React.Component {
 
     return (
       <Container>
-        <Row xs={1} md={2} className="g-4">
-          {recipeCards}
-        </Row>
+        <Row className="g-4">{recipeCards}</Row>
       </Container>
     );
   }

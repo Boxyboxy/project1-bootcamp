@@ -55,6 +55,7 @@ export class DisplayRecipe extends React.Component {
         </Button>
 
         <Modal
+          className="my-modal"
           show={this.state.show}
           onHide={this.handleClose}
           backdrop="static"
@@ -62,6 +63,10 @@ export class DisplayRecipe extends React.Component {
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
+          bg="primary"
+          // Unable to style backdrop successfully
+
+          backdropClassName="modal-backdrop"
         >
           <Modal.Header closeButton>
             <Modal.Title>{this.props.recipe.name}</Modal.Title>

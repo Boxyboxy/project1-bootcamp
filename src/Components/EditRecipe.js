@@ -117,7 +117,7 @@ export class EditRecipe extends React.Component {
     return (
       <>
         <Button variant="primary" onClick={this.handleShow}>
-          Edit recipe demo
+          Edit recipe
         </Button>
 
         <Modal
@@ -140,6 +140,7 @@ export class EditRecipe extends React.Component {
                       name="name"
                       onChange={this.handleChange}
                       value={name}
+                      className="mb-3"
                     />
                   </Form.Group>
                 </Row>
@@ -153,6 +154,7 @@ export class EditRecipe extends React.Component {
                       name="description"
                       onChange={this.handleChange}
                       value={description}
+                      className="mb-3"
                     />
                   </Form.Group>
                 </Row>
@@ -165,6 +167,7 @@ export class EditRecipe extends React.Component {
                       name="image"
                       onChange={this.handleChange}
                       value={image}
+                      className="mb-3"
                     />
                   </Form.Group>
                 </Row>
@@ -184,6 +187,7 @@ export class EditRecipe extends React.Component {
                             }
                             placeholder="Enter ingredient"
                             required
+                            className="mb-3"
                           />
                           {ingredientList.length - 1 === index &&
                             ingredientList.length < 15 && (
@@ -215,7 +219,7 @@ export class EditRecipe extends React.Component {
                 </Row>
 
                 <Form.Group controlId="formBasicInstructions">
-                  <Form.Label>Instructions</Form.Label>
+                  <Form.Label className="mt-3">Instructions</Form.Label>
 
                   {instructionsList.map((singleInstruction, index) => (
                     <Row key={index} className="ingredients">
@@ -230,6 +234,7 @@ export class EditRecipe extends React.Component {
                           }
                           placeholder="Enter instruction"
                           required
+                          className="mb-3"
                         />
                         {instructionsList.length - 1 === index &&
                           instructionsList.length < 15 && (
@@ -260,13 +265,14 @@ export class EditRecipe extends React.Component {
                 </Form.Group>
                 <Row>
                   <Form.Group controlId="formBasicSource">
-                    <Form.Label>Source</Form.Label>
+                    <Form.Label className="mt-3">Source</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder="Enter the source URL"
                       name="source"
                       onChange={this.handleChange}
                       value={source}
+                      className="mb-3"
                     />
                   </Form.Group>
                 </Row>
