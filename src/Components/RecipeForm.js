@@ -91,6 +91,7 @@ export class RecipeForm extends React.Component {
               type="text"
               placeholder="Enter name of dish"
               name="name"
+              required
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -103,6 +104,7 @@ export class RecipeForm extends React.Component {
               type="text"
               placeholder="Enter a short description of dish"
               name="description"
+              required
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -114,6 +116,7 @@ export class RecipeForm extends React.Component {
               type="text"
               placeholder="Enter image URL"
               name="image"
+              required
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -213,6 +216,7 @@ export class RecipeForm extends React.Component {
               type="text"
               placeholder="Enter the source URL"
               name="source"
+              required
               onChange={this.handleChange}
               className="mb-3"
             />
